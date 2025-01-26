@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>otakuidn_</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <style type="text/css">
+.navbar-nav .nav-link.active {
+  color: #ff4081 !important; /* Misalnya warna aktif */
+}
+
+  /* Styling for Jumbotron */
+  .jumbotron {
+    background-color: #2b2b2b; /* Warna abu-abu */
+    color: white;
+    padding: 70px 20px; /* Tambahkan padding untuk membuatnya lebih besar */
+  }
+
+  .jumbotron .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .text-container {
+    max-width: 50%;
+  }
+
+  .text-container .highlight {
+    color: #00bcd4;
+  }
+
+  .image-container {
+    max-width: 50%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .profile-image {
+    border-radius: 50%; /* Membuat gambar menjadi bulat sempurna */
+    width: 350px; /* Atur ukuran lebar */
+    height: 350px; /* Atur ukuran tinggi, sama dengan lebar */
+    object-fit: cover; /* Pastikan gambar tidak terdistorsi */
+    border: 5px solid #444; /* Menambahkan border */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Menambahkan shadow */
+  }
+
+  /* Navbar Link Hover Effect */
+  .navbar-nav .nav-link:hover {
+    color: #ff4081 !important;
+  }
+
+  /* Menambahkan jarak antar menu */
+  .navbar-nav .nav-item {
+    margin-right: 30px; /* Menambahkan jarak antara item menu */
+  }
+
+  /* Menghilangkan margin kanan pada item menu terakhir */
+  .navbar-nav .nav-item:last-child {
+    margin-right: 0;
+  }
+
+
+  /* About Us Image */
+  #about img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+
+/* Media Queries untuk Responsivitas */
+@media (max-width: 1199px) {
+  /* Gambar lebih kecil pada layar medium (tablet) */
+  #about img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+}
+
+/* Menjaga gambar dan teks tetap rapih pada perangkat layar besar */
+@media (max-width: 991px) {
+  .jumbotron .container {
+    justify-content: center; /* Memastikan konten berada di tengah pada layar kecil */
+  }
+
+  .image-container {
+    max-width: 100%; /* Membuat gambar menjadi lebih besar di perangkat kecil */
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+
+  .text-container {
+    text-align: center; /* Memusatkan teks pada perangkat kecil */
+  }
+}
+
+/* Media Queries untuk Responsivitas */
+@media (max-width: 576px) {
+  .image-container img {
+    width: 70%; /* Ukuran gambar mengikuti lebar layar pada perangkat mobile */
+    height: auto;
+    border-radius: 50%;
+  }
+
+  .text-container p {
+    font-size: 14px;
+  }
+
+  .text-container h1 {
+    font-size: 24px; /* Ukuran teks yang lebih kecil untuk mobile */
+  }
+}
+
+@media (min-width: 577px) and (max-width: 991px) {
+  /* Pengaturan kolom dan gambar pada perangkat lebih kecil */
+  #about img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+
+  .container {
+    padding: 15px;
+  }
+}
+
+@media (max-width: 576px) {
+  #about img {
+    max-width: 90%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+
+  .text-container p {
+    font-size: 12px;
+  }
+}
+
+
+  /* Social Media Buttons */
+  .btn {
+    font-size: 16px;
+    padding: 10px 20px;
+  }
+
+  section {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+  .about-image {
+    width: 350px; /* Atur ukuran lebar */
+    height: 350px; /* Sesuaikan dengan lebar agar bulat sempurna */
+    border-radius: 50%; /* Membuat gambar bulat sempurna */
+    object-fit: cover; /* Pastikan gambar tidak terdistorsi */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Menambahkan shadow untuk efek */
+    margin: 0 auto; /* Jika ingin gambar tetap berada di tengah */
+  }
+
+  .instagram-btn {
+    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: 0.3s;
+  }
+
+  .instagram-btn:hover {
+    filter: brightness(1.2);
+    text-decoration: none;
+    color: white;
+  }
+
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="#">OtakuIdn</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#home">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#about">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#content">Content</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#support">Support</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+<section id="home">
+  <!-- Jumbotron Container -->
+  <div class="jumbotron custom-jumbotron">
+    <div class="container">
+      <div class="row align-items-center text-center text-md-start">
+        <!-- Teks -->
+        <div class="col-md-6 mb-4 mb-md-0">
+          <h1 class="display-4">Welcome to OtakuIdn_</h1>
+          <p class="lead">Website ini merupakan website resmi dari fanspage otakuidn__ jelajahi info lebih lengkap pada menu dibawah ini.</p>
+          <a class="btn btn-outline-light btn-lg" href="#about" role="button">Getting started</a>
+        </div>
+        <!-- Gambar -->
+        <div class="col-md-6 image-container">
+          <img src="maskot.png" alt="Gambar Profil" class="profile-image">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- About Us Section -->
+<section id="about" class="py-5">
+  <div class="container text-center">
+    <h2 class="fw-bold mb-4">About Us</h2>
+    <div class="row align-items-center p-3">
+      <!-- Gambar dengan kolom responsif -->
+      <div class="col-12 col-md-5">
+        <img src="maskot.png" alt="Anime Character" class="img-fluid rounded-circle about-image mb-4">
+      </div>
+      <!-- Teks dengan kolom responsif -->
+      <div class="col-12 col-md-7 text-start">
+        <p style="font-size: 18px; text-align: justify;">
+          Selamat datang di otakuidn_! Tempat di mana kita bisa ngobrolin segala hal tentang anime dengan santai dan seru. Di sini, kamu bakal nemuin berbagai konten menarik, mulai dari opening dan ending anime yang bikin betah, quotes-quotenya yang bisa bikin kamu mikir, rekomendasi anime yang nggak boleh dilewatin, sampai panduan urutan nonton anime biar nggak bingung. Nggak cuma itu, ada juga tebak-tebakan anime seru buat uji pengetahuanmu, fakta-fakta unik yang jarang diketahui, dan tentu aja informasi tentang perilisan anime terbaru yang wajib kamu tahu. Yuk, gabung dan bareng-bareng merayakan dunia anime yang penuh warna ini :D
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section id="content" class="py-5 bg-light">
+  <div class="container">
+    <h2 class="fw-bold text-center mb-5">List Content</h2>
+    <div class="row px-1">
+      
+      <!-- Song Card -->
+      <div class="col-md-4 col-sm-6 mb-3">
+        <div class="card">
+          <img src="song2.png" class="card-img-top" alt="song">
+          <div class="card-body">
+            <h5 class="card-title">Anime Best Song</h5>
+            <p class="card-text">Koleksi lagu anime terbaik</p>
+            <a href="https://www.tiktok.com/@srvnt07/playlist/Song-7464108670756424456" target="_blank" class="btn btn-outline-primary">Read More</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quotes Card -->
+      <div class="col-md-4 col-sm-6 mb-3">
+        <div class="card">
+          <img src="quotes.png" class="card-img-top" alt="quotes">
+          <div class="card-body">
+            <h5 class="card-title">Anime Quotes</h5>
+            <p class="card-text">Kutipan inspiratif karakter anime</p>
+            <a href="https://www.tiktok.com/@srvnt07/playlist/Quotes-7463276772630186760" target="_blank" class="btn btn-outline-primary">Read More</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Rekomendasi Card -->
+      <div class="col-md-4 col-sm-6 mb-3">
+        <div class="card">
+          <img src="rekomendasi.png" class="card-img-top" alt="rekomendasi">
+          <div class="card-body">
+            <h5 class="card-title">Anime Recomendations</h5>
+            <p class="card-text">Rekomendasi anime terbaik untuk ditonton</p>
+            <a href="https://www.tiktok.com/@srvnt07/playlist/Rekomendasi%20Anime-7462880977271130888" target="_blank" class="btn btn-outline-primary">Read More</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Urutan Nonton Card -->
+      <div class="col-md-4 col-sm-6 mb-3">
+        <div class="card">
+          <img src="urutan.png" class="card-img-top" alt="urutan-nonton">
+          <div class="card-body">
+            <h5 class="card-title">Order of watching anime</h5>
+            <p class="card-text">Panduan urutan menonton anime biar gak bingung lagi</p>
+            <a href="https://www.tiktok.com/@srvnt07/playlist/Urutan%20Nonton-7462573483386833672" target="_blank" class="btn btn-outline-primary">Read More</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Anime Quiz Card -->
+      <div class="col-md-4 col-sm-6 mb-3">
+        <div class="card">
+          <img src="tebak.png" class="card-img-top" alt="anime-quiz">
+          <div class="card-body">
+            <h5 class="card-title">Anime Quiz</h5>
+            <p class="card-text">Uji pengetahuanmu tentang dunia anime dengan kuis seru</p>
+            <a href="https://www.tiktok.com/@srvnt07/playlist/Tebak%20Anime-7462572148113672978" target="_blank" class="btn btn-outline-primary">Read More</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Opini Random Card -->
+      <div class="col-md-4 col-sm-6 mb-3">
+        <div class="card">
+          <img src="opini.png" class="card-img-top" alt="opini-random">
+          <div class="card-body">
+            <h5 class="card-title">Random Facts</h5>
+            <p class="card-text">Beberapa fakta unik tentang anime dan karakter favorit</p>
+            <a href="https://www.tiktok.com/@srvnt07/playlist/Opini%20Random-7462571569116236552" target="_blank" class="btn btn-outline-primary">Read More</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Social Media Section -->
+<section id="support" class="py-5 bg-light">
+  <div class="container text-center">
+    <h2 class="fw-bold mb-4">Support Us</h2>
+    <p>Bantu support kami dengan cara mengikuti sosial media kami yaa.. :D</p>
+      <div class="d-flex justify-content-center">
+        <a href="https://trakteer.id/ali_khatami/link" class="btn btn-danger mx-2" target="_blank"><i class="bi bi-twitter"></i> Trakteer</a>
+        <a href="https://www.instagram.com/otakuidn__/" class="btn instagram-btn mx-2" target="_blank"><i class="bi bi-instagram"></i> Instagram</a>
+        <a href="https://www.tiktok.com/@srvnt07" class="btn btn-dark mx-2" target="_blank"><i class="bi bi-youtube"></i> Tiktok</a>
+      </div>
+  </div>
+</section>
+
+
+<div class="container-fluid p-4 bg-dark">
+    <h5 class="text-white">OtakuIdn_</h5>
+    <div class="d-flex justify-content-start">
+        <p style="font-size:14px" class="text-white">Thanks for visiting.</p>
+    </div>
+</div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+
+    // Fungsi untuk mengecek apakah bagian sedang terlihat
+    function checkActiveSection() {
+      sections.forEach(section => {
+        const rect = section.getBoundingClientRect();
+        const link = document.querySelector(`.navbar-nav .nav-link[href="#${section.id}"]`);
+        
+        // Cek apakah bagian tersebut terlihat di layar
+        if (rect.top >= 0 && rect.top <= window.innerHeight / 2) {
+          link.classList.add('active');
+        } else {
+          link.classList.remove('active');
+        }
+      });
+    }
+
+    // Panggil checkActiveSection saat scroll
+    window.addEventListener('scroll', checkActiveSection);
+
+    // Panggil checkActiveSection ketika halaman pertama kali dimuat
+    checkActiveSection();
+  });
+</script>
+
+
+</body>
+</html>
